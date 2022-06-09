@@ -206,6 +206,13 @@ input, select, textarea {
 		font-size: 13pt;
 	}
 
+	p.policy{
+		font-size: 9pt;
+		font-weight: 400;
+		color: #c0c0c0;
+		line-height: 1em;
+	}
+
 /* Section/Article */
 
 	section, article {
