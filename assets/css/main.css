@@ -207,10 +207,8 @@ input, select, textarea {
 	}
 
 	p.policy{
-		font-size: 9pt;
-		font-weight: 400;
-		color: #c0c0c0;
-		line-height: 1em;
+		font-size: 10pt;
+		line-height: 1.2em;
 	}
 
 /* Section/Article */
