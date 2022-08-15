@@ -245,6 +245,14 @@ input, select, textarea {
 	float: left;
 	}
 
+	img.leftShadowRed {
+    box-shadow: -10px 10px 0px 0px #C63834;
+    /*margin:  top right bottom left;*/
+	margin: .5em 2em 2em 0;
+	/*width: 300px;*/
+	/*float: left;*/
+	}
+
 	img.right {
     box-shadow: 10px 10px 0px 0px #D3D3D3;
 	margin: .5em 0 2em 2em;
