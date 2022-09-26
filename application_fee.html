@@ -11,10 +11,10 @@
 
 		gtag('config', 'G-JFC7XERRQM');
 	</script>
-	<title>CCA Events</title>
+	<title>CCA—404</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="Columbus Classical Academy is a Hillsdale College Curriculum School opening in Fall 2023. | About Us | Curriculum">
-	<meta name="keywords" content="Hillsdale, curriculum, classical, academy, columbus, ohio, school, teacher, virtue, traditional, private, education, american">
+	<meta name="keywords" content="Hillsdale, curriculum, classical, academy, columbus, ohio, school, teacher, virtue, traditional, private, education">
 	<link rel="shortcut icon" href="https://github.com/columbusclassical/columbusclassical.github.io/blob/master/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -26,10 +26,12 @@
 		<header id="header">
 			<div class="logo container">
 				<div>
-					<h1><a href="Events.html" id="logo">Upcoming Events</a></h1>
+					<h1>Application Fee</a></h1>
 				</div>
 			</div>
 		</header>
+
+
 
 		<!-- Nav -->
 		<nav id="nav">
@@ -76,7 +78,7 @@
 		<!-- Banner -->
 		<!-- <section id="banner">
 			<div class="content">
-				<h2>Admissions</h2>
+				<h2>Headmaster’s Welcome</h2>
 			</div>
 		</section> -->
 
@@ -84,85 +86,161 @@
 		<section id="main">
 			<div class="container">
 				<div class="row gtr-200">
-					<!-- <div class="col-12">
+					<div class="col-12">
 
 						<section class="box highlight">
 							<header>
-								<h2>Classical Education</h2>
+								<!-- <h2>Classical Education</h2> -->
 								
 							</header>
+
+							<p>Thank you for applying to Columbus Classical Academy. Please use this page to pay the application fee ($25 per student from October 3, 2022 to January 15, 2023; or $50 per student after January 15, 2023).</p>
+
+							<br><br>
+
+
+							<div id="smart-button-container">
+								<div style="text-align: center;">
+									<div style="margin-bottom: 1.25rem;">
+										<!-- <p>CCA Application Fee</p> -->
+										<select id="item-options"><option value="1 Student" price="25.00">1 Student - 25.00 USD</option><option value="2 Students" price="50.00">2 Students - 50.00 USD</option><option value="3 Students" price="75.00">3 Students - 75.00 USD</option><option value="4 Students" price="100.00">4 Students - 100.00 USD</option><option value="5 Students" price="125.00">5 Students - 125.00 USD</option><option value="6 Students" price="150.00">6 Students - 150.00 USD</option></select>
+										<select style="visibility: hidden" id="quantitySelect"></select>
+									</div>
+									<div id="paypal-button-container"></div>
+								</div>
+							</div>
+							<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+							<script>
+								function initPayPalButton() {
+									var shipping = 0;
+									var itemOptions = document.querySelector("#smart-button-container #item-options");
+									var quantity = parseInt();
+									var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+									if (!isNaN(quantity)) {
+										quantitySelect.style.visibility = "visible";
+									}
+									var orderDescription = 'CCA Application Fee';
+									if(orderDescription === '') {
+										orderDescription = 'Item';
+									}
+									paypal.Buttons({
+										style: {
+											shape: 'rect',
+											color: 'blue',
+											layout: 'vertical',
+											label: 'pay',
+
+										},
+										createOrder: function(data, actions) {
+											var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+											var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+											var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+											if(quantitySelect.options.length > 0) {
+												quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+											} else {
+												quantity = 1;
+											}
+
+											tax *= quantity;
+											tax = Math.round(tax * 100) / 100;
+											var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+											priceTotal = Math.round(priceTotal * 100) / 100;
+											var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+											return actions.order.create({
+												purchase_units: [{
+													description: orderDescription,
+													amount: {
+														currency_code: 'USD',
+														value: priceTotal,
+														breakdown: {
+															item_total: {
+																currency_code: 'USD',
+																value: itemTotalValue,
+															},
+															shipping: {
+																currency_code: 'USD',
+																value: shipping,
+															},
+															tax_total: {
+																currency_code: 'USD',
+																value: tax,
+															}
+														}
+													},
+													items: [{
+														name: selectedItemDescription,
+														unit_amount: {
+															currency_code: 'USD',
+															value: selectedItemPrice,
+														},
+														quantity: quantity
+													}]
+												}]
+											});
+										},
+										onApprove: function(data, actions) {
+											return actions.order.capture().then(function(orderData) {
+
+          // Full available details
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+
+        });
+										},
+										onError: function(err) {
+											console.log(err);
+										},
+									}).render('#paypal-button-container');
+								}
+								initPayPalButton();
+							</script>
 						</section>
-					</div> -->
-
-
-
-					<!-- Events -->
-					<section class="box features" id="events">
-
-						<!-- <h2 class="major"><span>Upcoming Events</span></h2> -->
-
-						<!-- <p>Pleaase feel free to join us at our upcoming events listed below.</p> -->
-
-						<h3>CCA Information Night</h3>
-						<p><strong>&emsp;Date: </strong>September 29, 2022 at 7:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong><br>&emsp;Owl Meeitng Room<br>&emsp;Old Worthington Library<br>&emsp;820 High Street<br>&emsp;Worthington, OH 43085</p>
-
-						<h3>Kindergarten Curriculum Hour with the Academic Dean</h3>
-						<p><strong>&emsp;Date: </strong>October 6, 2022 at 1:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong> TBD</p>
-
-						<h3>CCA Information Night</h3>
-						<p><strong>&emsp;Date: </strong>October 6, 2022 at 7:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong>TBD</p>
-
-						<h3>Kindergarten Curriculum Hour with the Academic Dean</h3>
-						<p><strong>&emsp;Date: </strong>October 20, 2022 at 1:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong> TBD</p>
-
-						<h3>CCA Information Night</h3>
-						<p><strong>&emsp;Date: </strong>October 20, 2022 at 7:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong>TBD</p>
-
-						<h3>Kindergarten Curriculum Hour with the Academic Dean</h3>
-						<p><strong>&emsp;Date: </strong>November 3, 2022 at 1:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong> TBD</p>
-
-						<h3>CCA Information Night</h3>
-						<p><strong>&emsp;Date: </strong>November 3, 2022 at 7:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong>TBD</p>
-
-						<h3>Kindergarten Curriculum Hour with the Academic Dean</h3>
-						<p><strong>&emsp;Date: </strong>November 17, 2022 at 1:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong> TBD</p>
-
-						<h3>CCA Information Night</h3>
-						<p><strong>&emsp;Date: </strong>November 17, 2022 at 7:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong>TBD</p>
-
-						<h3>Kindergarten Curriculum Hour with the Academic Dean</h3>
-						<p><strong>&emsp;Date: </strong>December 8, 2022 at 1:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong> TBD</p>
-
-						<h3>CCA Information Night</h3>
-						<p><strong>&emsp;Date: </strong>December 8, 2022 at 7:00 p.m.</p>
-						<p><strong>&emsp;Location: </strong>TBD</p>
-
-
-					</section>
-					<div class="col-12">
-						<ul class="actions">
-							<li><a href="#contact" class="button large">Contact</a></li>
-							<li><a href="admissions.html" class="button alt large">Admissions</a></li>
-						</ul>
 					</div>
-				</div>
+				</section>
 			</div>
-		</section>
+		</div>
+	</section>
+
+	<!-- Quote -->
+	<!-- <section id="quote">
+		<div class="container">
+			<p><strong>“It ought to be the oldest things that are taught to the youngest children, the assured and experienced truths that are put first to the baby.” 
+			</strong><br>
+		~G. K. Chesterton</p>
+	</div>
+</section> -->
+
+
+<section id="main">
+	<div class="container">
+		<div class="row gtr-200">
+
+			<!-- Our Classical Curriculum -->
+				<!-- <section class="box features" id="tuition">
+					<h2 class="major"><span>Tuition & Fees</span></h2>
+
+					<p>Because we believe that a Columbus Classical Academy education is good for every student, we endeavor to make it affordable to as many families as possible. At the same time, we also have decided not to accept direct government funding that is typically available even to other private schools, in order to maintain the integrity of our <a href="about.html#mission" target="_blank">Mission</a> and the independence of the institution we are founding. As a result, 2023–2024 tuition will depend, in part, upon enrollment numbers and donor generosity.</p>
+
+					<p>However, at this time and based upon our current projections, we are hopeful that tuition for the 2023–2024 school year will fall within the range of $10,000 to $15,000—a figure substantially lower than many private schools in the Columbus area.</p>
+
+					<p>We will post final tuition numbers no later than March 15, 2023, before any enrollment deposits are due.</p>
+
+				</section>
+			</div> -->
+		</div>
 	</section>
 
 
+
 	<!-- Quote -->
-	<section id="quote">
+	<!-- <section id="quote">
 		<div class="container">
 			<p><strong>“Observe well how I pass along this way
 				<br>to the truth you seek, so that in time
@@ -170,7 +248,7 @@
 			</strong><br>
 			~Dante, <em>Paradiso</em></p>
 		</div>
-	</section>
+	</section> -->
 
 
 

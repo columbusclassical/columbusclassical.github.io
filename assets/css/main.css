@@ -39,6 +39,16 @@ ol, ul {
 	list-style: none;
 }
 
+/*qq*/
+ul.check {
+  list-style: none;
+}
+
+ul.check li:before {
+  /*content: '✓ ';*/
+  content: '☐ ';
+}
+
 blockquote, q {
 	quotes: none;
 }
