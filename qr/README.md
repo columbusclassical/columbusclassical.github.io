@@ -15,3 +15,4 @@ Each QR code has an associated `redir_XX.html` page that redirects to the desire
 | `redir_01` | 2022-05 Josephinum Event Flyer |
 | `redir_02` | 2022-09 Brochure               |
 | `redir_03` | 2022-09 Mailer                 | 
+| `redir_04` | 2022-09 Flyer                  | 
