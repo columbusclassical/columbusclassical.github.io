@@ -2557,7 +2557,7 @@ input, select, textarea {
 		background-repeat: repeat, repeat, no-repeat;
 		background-size: auto, auto, cover;
 		z-index: 1;
-		padding: 11em 0;
+		padding: 0em 0;
 	}
 
 		#banner .content {
@@ -2981,7 +2981,7 @@ input, select, textarea {
 				z-index: 10001;
 				/*qq*/
 				/*background-color: rgba(21, 38, 23, 0.8);*/
-				/*background-image: url("images/overlay.png");*/
+				/*background-image: url("images/logos/Logo 2c_horz.png");*/
 				background-color: #071D49 /*mobile nav background, was green*/;
 			}
 
@@ -2996,6 +2996,12 @@ input, select, textarea {
 					color: #fff;
 					z-index: 1000;
 					text-align: center;
+					visibility: hidden;
+				}
+
+				#titleBar .title:before {
+					/*qq*/
+					content: "CCA: "
 				}
 
 				#titleBar .toggle {
