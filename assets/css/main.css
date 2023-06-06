@@ -253,7 +253,7 @@ input, select, textarea {
 	img.foot {
     /*box-shadow: 7px 7px 0px 0px #D2A054;*/
     /*margin:  top right bottom left;*/
-	margin: 1em 0 -3em 0;
+		margin: 1em 0 -3em 0;
 	}
 
 	img.left {
@@ -267,17 +267,36 @@ input, select, textarea {
 	img.leftShadowRed {
     box-shadow: -10px 10px 0px 0px #C63834;
     /*margin:  top right bottom left;*/
-	margin: .5em 2em 2em 0;
-	/*width: 300px;*/
-	/*float: left;*/
+		margin: .5em 2em 2em 0;
+		/*width: 300px;*/
+		/*float: left;*/
 	}
 
 	img.right {
     box-shadow: 10px 10px 0px 0px #D3D3D3;
-	margin: .5em 0 2em 2em;
-	width: 300px;
-	float: right;
+		margin: .5em 0 2em 2em;
+		width: 300px;
+		float: right;
 	}
+
+	img.leftmob {
+    box-shadow: -10px 10px 0px 0px #D3D3D3;
+    /*margin:  top right bottom left;*/
+		margin: .5em 2em 2em 0;
+		max-width: 100%;
+		min-width: 250px;
+		float: left;
+	}
+
+
+	img.rightmob {
+    box-shadow: 10px 10px 0px 0px #D3D3D3;
+		margin: .5em 0 2em 2em;
+		max-width: 100%;
+		min-width: 250px;
+		float: right;
+	}
+
 
 
 
