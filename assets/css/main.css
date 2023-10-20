@@ -2588,7 +2588,8 @@ input, select, textarea {
 		/*background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/quote2-light.jpg");*/
 		/*background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/quote2.jpg");*/
 /*		background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/polaris1.jpg");*/
-    background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/polaris3-banner.png");
+/*    background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/polaris3-banner.png");*/
+		background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/polaris2-banner.png");
 		background-position: top left, top left, center center;
 		background-repeat: repeat, repeat, no-repeat;
 		background-size: auto, auto, cover;
